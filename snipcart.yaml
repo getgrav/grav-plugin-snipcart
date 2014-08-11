@@ -1,0 +1,6 @@
+name: Snipcart
+description: Provides support for http://snipcart.com
+
+enabled: true
+built_in_css: true
+api_key: YTdlNTA5NDgtMjczNS00ZGIzLTljN2MtNmU0MWVhNTU2NDQ4

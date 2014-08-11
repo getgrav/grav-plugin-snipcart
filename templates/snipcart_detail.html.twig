@@ -1,0 +1,10 @@
+{% extends 'partials/snipcart_base.html.twig' %}
+
+{% block content %}
+
+    {{ parent() }}
+
+    <div class="content-wrapper">
+    {% include 'partials/snipcart_detail_item.html.twig' %}
+    </div>
+{% endblock %}

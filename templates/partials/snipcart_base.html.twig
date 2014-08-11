@@ -1,0 +1,24 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block head %}
+    {{ parent() }}
+    <link id="snipcart-theme" type="text/css"
+        href="https://app.snipcart.com/themes/base/snipcart.css"
+        rel="stylesheet">
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+    <script type="text/javascript"
+    id="snipcart"
+    src="https://app.snipcart.com/scripts/snipcart.js"
+    data-api-key="{{ header.snipcart.api_key }}"></script>
+{% endblock %}
+
+{% block header_extra %}
+    {% include 'partials/snipcart_cart.html.twig' %}
+{% endblock %}
+
+{% block content %}
+    {% include 'breadcrumbs.html.twig' %}
+{% endblock %}

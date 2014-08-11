@@ -1,0 +1,162 @@
+.snipcart-summary {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.block-group, .block, .block-group:after, .block:after, .block-group:before, .block:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.block-group {
+  *zoom: 1; }
+
+.block-group:before, .block-group:after {
+  display: table;
+  content: "";
+  line-height: 0; }
+
+.block-group:after {
+  clear: both; }
+
+.block-group {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+
+.block-group > .block-group {
+  clear: none;
+  float: left;
+  margin: 0 !important; }
+
+.block {
+  float: left;
+  width: 100%; }
+
+.snipcart-summary {
+  display: inline-block;
+  float: right;
+  font-weight: bold;
+  margin-left: 15px; }
+  .snipcart-summary i {
+    position: relative;
+    font-size: 26px;
+    margin-right: 10px;
+    vertical-align: middle; }
+  .snipcart-summary .snipcart-total-items {
+    position: absolute;
+    background: #e74c3c;
+    font-size: 12px;
+    display: block;
+    top: -6px;
+    right: -5px;
+    border-radius: 100%;
+    height: 16px;
+    width: 16px;
+    text-align: center;
+    line-height: 16px;
+    color: #fff;
+    font-weight: bold; }
+
+.snipcart-categories:after {
+  content: "";
+  display: table;
+  clear: both; }
+.snipcart-categories .snipcart-item {
+  width: 50%;
+  float: left;
+  text-align: center; }
+  .snipcart-categories .snipcart-item.block {
+    width: 50%; }
+    .snipcart-categories .snipcart-item.block:nth-chile(2n+1) {
+      clear: left; }
+    @media only all and (max-width: 47.938rem) {
+      .snipcart-categories .snipcart-item.block {
+        width: 100%;
+        clear: left; } }
+    @media only all and (max-width: 30rem) {
+      .snipcart-categories .snipcart-item.block {
+        width: 100%;
+        clear: left; } }
+
+.snipcart-products:after {
+  content: "";
+  display: table;
+  clear: both; }
+.snipcart-products .snipcart-item {
+  width: 33%;
+  float: left;
+  text-align: center; }
+  .snipcart-products .snipcart-item:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .snipcart-products .snipcart-item h3 {
+    font-size: 16px; }
+  .snipcart-products .snipcart-item.block {
+    width: 25%; }
+    .snipcart-products .snipcart-item.block:nth-chile(4n+1) {
+      clear: left; }
+    @media only all and (min-width: 60rem) and (max-width: 74.938rem) {
+      .snipcart-products .snipcart-item.block {
+        width: 33%;
+        clear: none; }
+        .snipcart-products .snipcart-item.block:nth-chile(3n+1) {
+          clear: left; } }
+    @media only all and (min-width: 48rem) and (max-width: 59.938rem) {
+      .snipcart-products .snipcart-item.block {
+        width: 33%;
+        clear: none; }
+        .snipcart-products .snipcart-item.block:nth-chile(3n+1) {
+          clear: left; } }
+    @media only all and (max-width: 47.938rem) {
+      .snipcart-products .snipcart-item.block {
+        width: 50%;
+        clear: none; }
+        .snipcart-products .snipcart-item.block:nth-chile(2n+1) {
+          clear: left; } }
+    @media only all and (max-width: 30rem) {
+      .snipcart-products .snipcart-item.block {
+        width: 100%;
+        clear: left; } }
+
+.snipcart-thumb {
+  position: relative;
+  display: inline-block; }
+  .snipcart-thumb .snipcart-price {
+    position: absolute;
+    top: 0;
+    right: -15px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    width: 60px;
+    background: #e74c3c;
+    border-radius: 100%;
+    color: #fff; }
+
+#snipcart-detail {
+  padding-top: 50px; }
+  #snipcart-detail h1, #snipcart-detail h2, #snipcart-detail h3, #snipcart-detail h4 {
+    line-height: 1.2; }
+  #snipcart-detail .snipcart-info, #snipcart-detail .snipcart-details {
+    width: 50%; }
+    @media only all and (max-width: 47.938rem) {
+      #snipcart-detail .snipcart-info, #snipcart-detail .snipcart-details {
+        width: 100%; } }
+  #snipcart-detail .snipcart-info {
+    text-align: center; }
+  #snipcart-detail .snipcart-details {
+    padding-left: 30px; }
+    #snipcart-detail .snipcart-details h1 {
+      text-align: left; }
+  #snipcart-detail .snipcart-thumb .snipcart-price {
+    height: 100px;
+    line-height: 100px;
+    width: 100px;
+    font-size: 1.5rem; }
+
