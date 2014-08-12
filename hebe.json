@@ -1,0 +1,15 @@
+{
+   "project":"grav-plugin-snipcart",
+   "platforms":{
+      "grav":{
+         "nodes":{
+            "plugin":[
+               {
+                  "source":"/",
+                  "destination":"/user/plugins/snipcart"
+               }
+            ]
+         }
+      }
+   }
+}
