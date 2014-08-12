@@ -57,7 +57,7 @@ class SnipcartPlugin extends Plugin
     /**
      * Set needed variables to display cart.
      */
-    public function onAfterSiteTwigVars()
+    public function onAfterTwigSiteVars()
     {
 
 
