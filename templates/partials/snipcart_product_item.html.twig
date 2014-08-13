@@ -1,0 +1,33 @@
+{% set snipcart_image = page.media.images|first %}
+
+<div class="snipcart-item block" >
+
+    {{ page.order|trim('.') }}
+
+    <h3><a href="{{ page.url }}">{{ page.header.title }}</a></h3>
+    <div class="snipcart-thumb">
+        {% if snipcart_image %}
+            <a href="{{ page.url }}">{{ snipcart_image.cropResize(200,200).html('page.header.title','snipcart-thumb-image') }}</a>
+        {% endif %}
+        <span class="snipcart-price">
+        ${{ page.header.price }}
+        </span>
+    </div>
+    <div class="snipcart-details">
+    <p>
+        <a href="{{ page.url }}"
+            class="button button-small">
+            <i class="fa fa-info-circle"></i> Details
+        </a>
+        <a href="#"
+            class="button button-small snipcart-add-item"
+            data-item-id="{{ page.header.product_id }}"
+            data-item-name="{{ page.header.title }}"
+            data-item-price="{{ page.header.price }}"
+            data-item-url="{{ page.url }}"
+        >
+            <i class="fa fa-shopping-cart"></i> Add
+        </a>
+    </p>
+    </div>
+</div>
