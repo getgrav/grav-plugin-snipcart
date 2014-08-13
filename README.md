@@ -10,6 +10,8 @@ You should now have all the plugin files under
 
 	/your/site/grav/user/plugins/snipcart
 
+>> NOTE: This plugin is a modular component for Grav which requires [Grav](http://github.com/getgrav/grav), the [Error](https://github.com/getgrav/grav-plugin-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) plugins, and a theme to be installed in order to operate.
+
 # Usage
 
 In order to use Snipcart you need to have an `API` key. You first need to [register](https://app.snipcart.com/account/register), if you aren't already.
