@@ -59,19 +59,16 @@ class SnipcartPlugin extends Plugin
      */
     public function onAfterTwigSiteVars()
     {
-
-
         if (!$this->active) {
             return;
         }
 
-
         if ($this->config->get('plugins.snipcart.built_in_css')) {
 
-            $twig = Registry::get('Twig');
+            Registry::get('Assets')
+                ->add('https://app.snipcart.com/themes/base/snipcart.css', 10, false) // priority 10, no-pipeline
+                ->add('@plugin/snipcart/css:snipcart.css');
 
-            $twig->twig_vars['stylesheets'][] = 'user/plugins/snipcart/css/snipcart.css';
-            // $twig->twig_vars['stylesheets'][] = 'https://app.snipcart.com/themes/base/snipcart.css';
         }
     }
 }
