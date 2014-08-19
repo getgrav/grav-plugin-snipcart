@@ -1,25 +1,21 @@
 <?php
 namespace Grav\Plugin;
 
-use \Grav\Common\Plugin;
-use \Grav\Common\Registry;
-use \Grav\Common\Grav;
-use \Grav\Common\Page\Page;
-use \Grav\Common\Page\Pages;
+use Grav\Common\Plugin;
+use Grav\Common\Grav;
+use Grav\Common\Page\Page;
 
 class SnipcartPlugin extends Plugin
 {
-
-    protected $active = false;
-
-     /**
-     * Activate snipcart plugin
-     *
-     * Also disables debugger.
+    /**
+     * @return array
      */
-    public function onAfterInitPlugins()
-    {
-        $this->active = true;
+    public static function getSubscribedEvents() {
+        return [
+            'onAfterGetPage' => ['onAfterGetPage', 0],
+            'onAfterTwigTemplatesPaths' => ['onAfterTwigTemplatesPaths', 0],
+            'onAfterTwigSiteVars' => ['onAfterTwigSiteVars', 0]
+        ];
     }
 
     /**
@@ -27,14 +23,10 @@ class SnipcartPlugin extends Plugin
      */
     public function onAfterGetPage()
     {
-        if (!$this->active) {
-            return;
-        }
-
         $defaults = (array) $this->config->get('plugins.snipcart');
 
         /** @var Page $page */
-        $page = Registry::get('Grav')->page;
+        $page = $this->grav['page'];
         if (isset($page->header()->snipcart)) {
             $page->header()->snipcart = array_merge($defaults, $page->header()->snipcart);
         } else {
@@ -47,11 +39,7 @@ class SnipcartPlugin extends Plugin
      */
     public function onAfterTwigTemplatesPaths()
     {
-        if (!$this->active) {
-            return;
-        }
-
-        Registry::get('Twig')->twig_paths[] = __DIR__ . '/templates';
+        $this->grav['twig']->twig_paths[] = __DIR__ . '/templates';
     }
 
     /**
@@ -59,13 +47,9 @@ class SnipcartPlugin extends Plugin
      */
     public function onAfterTwigSiteVars()
     {
-        if (!$this->active) {
-            return;
-        }
-
         if ($this->config->get('plugins.snipcart.built_in_css')) {
 
-            Registry::get('Assets')
+            $this->grav['assets']
                 ->add('https://app.snipcart.com/themes/base/snipcart.css', 10, false) // priority 10, no-pipeline
                 ->add('@plugin/snipcart/css:snipcart.css');
 
