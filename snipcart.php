@@ -51,7 +51,7 @@ class SnipcartPlugin extends Plugin
 
             $this->grav['assets']
                 ->add('https://app.snipcart.com/themes/base/snipcart.css', 10, false) // priority 10, no-pipeline
-                ->add('@plugin/snipcart/css:snipcart.css');
+                ->add('plugin://snipcart/css/snipcart.css');
 
         }
     }
