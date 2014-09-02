@@ -40,8 +40,16 @@ $cart-accent: #e74c3c;
         width: 16px;
         text-align: center;
         line-height: 16px;
-        color: #fff;
         font-weight: bold;
+    }
+}
+
+// need to override an important setting in antimatter
+#header, #header.scrolled {
+    #navbar, .snipcart-summary{
+        span.snipcart-total-items {
+            color: #fff !important;
+        }
     }
 }
 
