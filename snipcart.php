@@ -4,6 +4,8 @@ namespace Grav\Plugin;
 use Grav\Common\Plugin;
 use Grav\Common\Grav;
 use Grav\Common\Page\Page;
+use Grav\Common\Page\Types;
+use RocketTheme\Toolbox\Event\Event;
 
 class SnipcartPlugin extends Plugin
 {
@@ -13,6 +15,7 @@ class SnipcartPlugin extends Plugin
     public static function getSubscribedEvents() {
         return [
             'onPageInitialized' => ['onPageInitialized', 0],
+            'onGetPageTemplates' => ['onGetPageTemplates', 0],
             'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
             'onTwigSiteVariables' => ['onTwigSiteVariables', 0]
         ];
@@ -32,6 +35,16 @@ class SnipcartPlugin extends Plugin
         } else {
             $page->header()->snipcart = $defaults;
         }
+    }
+
+    /**
+     * Add page template types.
+     */
+    public function onGetPageTemplates(Event $event)
+    {
+        /** @var Types $types */
+        $types = $event->types;
+        $types->scanTemplates('plugins://snipcart/templates');
     }
 
     /**
