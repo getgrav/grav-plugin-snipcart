@@ -12,9 +12,8 @@ keywords: snipcart, plugin, shop, cart
 bugs: https://github.com/getgrav/grav-plugin-snipcart/issues
 license: MIT
 
-validation: strict
-
 form:
+  validation: strict
   fields:
     enabled:
       type: toggle
