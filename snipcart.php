@@ -26,6 +26,11 @@ class SnipcartPlugin extends Plugin
      */
     public function onPageInitialized()
     {
+        if ($this->isAdmin()) {
+            $this->active = false;
+            return;
+        }
+
         $defaults = (array) $this->config->get('plugins.snipcart');
 
         /** @var Page $page */
@@ -42,6 +47,8 @@ class SnipcartPlugin extends Plugin
      */
     public function onGetPageTemplates(Event $event)
     {
+        if (!$this->active) return;
+
         /** @var Types $types */
         $types = $event->types;
         $types->scanTemplates('plugins://snipcart/templates');
@@ -52,6 +59,8 @@ class SnipcartPlugin extends Plugin
      */
     public function onTwigTemplatePaths()
     {
+        if (!$this->active) return;
+
         $this->grav['twig']->twig_paths[] = __DIR__ . '/templates';
     }
 
@@ -60,6 +69,8 @@ class SnipcartPlugin extends Plugin
      */
     public function onTwigSiteVariables()
     {
+        if (!$this->active) return;
+
         if ($this->config->get('plugins.snipcart.built_in_css')) {
 
             $this->grav['assets']
