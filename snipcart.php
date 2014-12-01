@@ -12,13 +12,39 @@ class SnipcartPlugin extends Plugin
     /**
      * @return array
      */
-    public static function getSubscribedEvents() {
+    public static function getSubscribedEvents()
+    {
         return [
-            'onPageInitialized' => ['onPageInitialized', 0],
-            'onGetPageTemplates' => ['onGetPageTemplates', 0],
-            'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
-            'onTwigSiteVariables' => ['onTwigSiteVariables', 0]
+            'onPluginsInitialized' => ['onPluginsInitialized', 0],
+            'onGetPageTemplates' => ['onGetPageTemplates', 0]
         ];
+    }
+
+    /**
+     * Enable search only if url matches to the configuration.
+     */
+    public function onPluginsInitialized()
+    {
+        if ($this->isAdmin()) {
+            $this->active = false;
+            return;
+        }
+
+        $this->enable([
+            'onPageInitialized' => ['onPageInitialized', 0],
+            'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0]
+        ]);
+
+    }
+
+    /**
+     * Add page template types.
+     */
+    public function onGetPageTemplates(Event $event)
+    {
+        /** @var Types $types */
+        $types = $event->types;
+        $types->scanTemplates('plugins://snipcart/templates');
     }
 
     /**
@@ -35,16 +61,10 @@ class SnipcartPlugin extends Plugin
         } else {
             $page->header()->snipcart = $defaults;
         }
-    }
 
-    /**
-     * Add page template types.
-     */
-    public function onGetPageTemplates(Event $event)
-    {
-        /** @var Types $types */
-        $types = $event->types;
-        $types->scanTemplates('plugins://snipcart/templates');
+        $this->enable([
+            'onTwigSiteVariables' => ['onTwigSiteVariables', 0]
+        ]);
     }
 
     /**
