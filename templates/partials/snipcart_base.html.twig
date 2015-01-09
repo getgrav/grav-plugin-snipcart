@@ -13,5 +13,7 @@
 {% endblock %}
 
 {% block content %}
-    {% include 'breadcrumbs.html.twig' %}
+    {% if config.plugins.breadcrumbs.enabled %}
+        {% include 'partials/breadcrumbs.html.twig' ignore missing %}
+    {% endif %}
 {% endblock %}
