@@ -36,3 +36,9 @@ form:
         0: Disabled
       validate:
         type: bool
+
+    api_key:
+      type: text
+      size: medium
+      label: API Key
+      default: 'YOUR_API_KEY'
