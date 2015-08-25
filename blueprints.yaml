@@ -1,5 +1,5 @@
 name: Snipcart
-version: 1.2.1
+version: 1.3.0
 description: "This plugin wraps the very good [Snipcart](https://snipcart.com/) application and let's you turn your Grav site into a shopping cart very easily."
 icon: shopping-cart
 author:
@@ -36,3 +36,9 @@ form:
         0: Disabled
       validate:
         type: bool
+
+    api_key:
+      type: text
+      size: medium
+      label: API Key
+      default: 'YOUR_API_KEY'
