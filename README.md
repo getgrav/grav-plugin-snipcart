@@ -22,7 +22,7 @@ Once you have signed up and confirmed your account, log in and head to the `Acco
 
 Reference: [Snipcart Documentation](http://docs.snipcart.com/).
 
-When you have the `API` key you can now edit the plugin to use it. To do so create the folder `user/config/plugins`, if it doesn't exist already, and copy the file [snipcart.yaml](snipcart.yaml) in it.
+When you have the `API` key you can now edit the plugin to use it. To do so go to the user/plugins/snipcart/ folder and create the file `snipcart.yaml`, if it doesn't exist already, and copy the contents of the file [snipcart.yaml](snipcart.yaml) in it.
 
 Edit the file and replace `YOUR_API_KEY` with the key that Snipcart provides you with.
 
