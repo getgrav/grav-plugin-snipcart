@@ -1,3 +1,9 @@
+# v1.4.0
+## 09/26/2015
+
+1. [](#improved)
+    * SnipCart asset URLs updated to use CDN
+
 # v1.3.0
 ## 08/25/2015
 
