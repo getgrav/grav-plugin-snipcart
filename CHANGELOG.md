@@ -1,3 +1,9 @@
+# v1.5.0
+## 24-11-2015
+
+1. [](#bugfix)
+    * Fixed a bug in the products and categories list on smaller screens
+
 # v1.4.0
 ## 09/26/2015
 
