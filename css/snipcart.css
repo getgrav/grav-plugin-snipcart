@@ -74,16 +74,12 @@
   text-align: center; }
   .snipcart-categories .snipcart-item.block {
     width: 50%; }
-    .snipcart-categories .snipcart-item.block:nth-child(2n+1) {
-      clear: left; }
     @media only all and (max-width: 47.938em) {
       .snipcart-categories .snipcart-item.block {
-        width: 100%;
-        clear: left; } }
+        width: 100%; } }
     @media only all and (max-width: 30em) {
       .snipcart-categories .snipcart-item.block {
-        width: 100%;
-        clear: left; } }
+        width: 100%; } }
 
 .snipcart-products:after {
   content: "";
@@ -101,30 +97,18 @@
     font-size: 16px; }
   .snipcart-products .snipcart-item.block {
     width: 25%; }
-    .snipcart-products .snipcart-item.block:nth-child(4n+1) {
-      clear: left; }
     @media only all and (min-width: 60em) and (max-width: 74.938em) {
       .snipcart-products .snipcart-item.block {
-        width: 33%;
-        clear: none; }
-        .snipcart-products .snipcart-item.block:nth-child(3n+1) {
-          clear: left; } }
+        width: 33%; } }
     @media only all and (min-width: 48em) and (max-width: 59.938em) {
       .snipcart-products .snipcart-item.block {
-        width: 33%;
-        clear: none; }
-        .snipcart-products .snipcart-item.block:nth-child(3n+1) {
-          clear: left; } }
+        width: 33%; } }
     @media only all and (max-width: 47.938em) {
       .snipcart-products .snipcart-item.block {
-        width: 50%;
-        clear: none; }
-        .snipcart-products .snipcart-item.block:nth-child(2n+1) {
-          clear: left; } }
+        width: 50%; } }
     @media only all and (max-width: 30em) {
       .snipcart-products .snipcart-item.block {
-        width: 100%;
-        clear: left; } }
+        width: 100%; } }
 
 .snipcart-thumb {
   position: relative;
@@ -162,3 +146,4 @@
     width: 100px;
     font-size: 1.5rem; }
 
+/*# sourceMappingURL=snipcart.css.map */

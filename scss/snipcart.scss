@@ -62,12 +62,8 @@ $cart-accent: #e74c3c;
 
         &.block {
             width: 50%;
-            &:nth-child(2n+1) {
-                clear: left;
-            }
             @include breakpoint((mobile-only, small-mobile-range)) {
                 width: 100%;
-                clear: left;
             }
         }
     }
@@ -87,26 +83,14 @@ $cart-accent: #e74c3c;
 
         &.block {
             width: 25%;
-            &:nth-child(4n+1) {
-                clear: left;
-            }
             @include breakpoint((desktop-range,tablet-range)) {
                 width: 33%;
-                clear: none;
-                &:nth-child(3n+1) {
-                    clear: left;
-                }
             }
             @include breakpoint(mobile-only) {
                 width: 50%;
-                clear: none;
-                &:nth-child(2n+1) {
-                    clear: left;
-                }
             }
             @include breakpoint(small-mobile-range) {
                 width: 100%;
-                clear: left;
             }
         }
     }
