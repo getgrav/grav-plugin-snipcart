@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    {% include 'modular/lightslider.html.twig' with {'page': page.find('/slider', true)} %}
+    {% include 'modular/lightslider.html.twig' ignore missing with {'page': page.find('/slider', true)} %}
 
     {{ parent() }}
 
