@@ -1,5 +1,13 @@
+# v1.6.0
+## 05/03/2016
+
+1. [](#new)
+    * Use new SnipCart 2.0 version
+1. [](#improved)
+    * Moved `snipcart.html.twig` into plugin
+
 # v1.5.0
-## 24-11-2015
+## 11/24/2015
 
 1. [](#bugfix)
     * Fixed a bug in the products and categories list on smaller screens
