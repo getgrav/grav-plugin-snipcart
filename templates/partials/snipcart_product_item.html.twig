@@ -25,6 +25,12 @@
             data-item-name="{{ page.header.title }}"
             data-item-price="{{ page.header.price }}"
             data-item-url="{{ page.url }}"
+                {% spaceless %}
+                    {% if snipcart_image %}
+                        data-item-image="{{ snipcart_image.cropResize(50,50).url }}"
+                    {% endif %}
+                {% endspaceless %}
+                
         >
             <i class="fa fa-shopping-cart"></i> Add
         </a>
