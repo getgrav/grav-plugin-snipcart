@@ -1,3 +1,9 @@
+# v1.7.0
+## 07/14/2016
+
+1. [](#improved)
+    * Added a `data-item-image` attribute, to put a product thumb in the cart
+
 # v1.6.0
 ## 05/03/2016
 
