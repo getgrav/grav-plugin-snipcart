@@ -7,7 +7,7 @@
     <h3><a href="{{ page.url }}">{{ page.header.title }}</a></h3>
     <div class="snipcart-thumb">
         {% if snipcart_image %}
-            <a href="{{ page.url }}">{{ snipcart_image.cropResize(200,200).html('page.header.title','snipcart-thumb-image') }}</a>
+            <a href="{{ page.url }}">{{ snipcart_image.cropResize(200,200).html('page.header.title','snipcart-thumb-image')|raw }}</a>
         {% endif %}
         <span class="snipcart-price">
         ${{ page.header.price }}
@@ -27,7 +27,7 @@
             data-item-url="{{ page.url }}"
                 {% spaceless %}
                     {% if snipcart_image %}
-                        data-item-image="{{ snipcart_image.cropResize(50,50).url }}"
+                        data-item-image="{{ snipcart_image.cropResize(50,50).url|raw }}"
                     {% endif %}
                 {% endspaceless %}
                 
