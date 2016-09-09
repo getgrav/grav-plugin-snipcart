@@ -5,7 +5,7 @@
     {{ parent() }}
 
     <div class="content-wrapper">
-        {{ page.content }}
+        {{ page.content|raw }}
 
         <div class="snipcart-categories block-group">
         {% for child in page.collection() %}

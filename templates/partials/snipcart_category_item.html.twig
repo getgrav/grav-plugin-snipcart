@@ -5,7 +5,7 @@
     <h3><a href="{{ page.url }}">{{ page.header.category }}</a></h3>
     <div class="snipcart-thumb">
         {% if snipcart_image %}
-            <a href="{{ page.url }}">{{ snipcart_image.cropResize(300,300).html(page.header.category,'snipcart-thumb-image') }}</a>
+            <a href="{{ page.url }}">{{ snipcart_image.cropResize(300,300).html(page.header.category,'snipcart-thumb-image')|raw }}</a>
         {% endif %}
     </div>
 
