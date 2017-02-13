@@ -26,7 +26,7 @@ When you have the `API` key you can now edit the plugin to use it. To do so go t
 
 Edit the file and replace `YOUR_API_KEY` with the key that Snipcart provides you with.
 
-> Note: If you want to see this plugin in action, have a look at our [Shop Site Skeleton](http://github.com/grav/grav-skeleton-shop-site/archive/master.zip) 
+> Note: If you want to see this plugin in action, have a look at our [Shop Site Skeleton](https://github.com/getgrav/grav-skeleton-shop-site) 
 
 # Config Defaults
 
