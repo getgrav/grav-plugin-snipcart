@@ -16,17 +16,23 @@
         <p>
             <a href="#"
                 class="button snipcart-add-plan"
-				data-plan-id={{ page.header.sub_id }}"
-				data-plan-name="{{ page.header.title }}"
-				data-plan-amount="{{ page.header.price }}"
-				data-plan-interval="{{ page.header.interval }}"
-                data-plan-url="{{ page.url }}"
+                data-item-id="{{ page.header.product_id }}"
+                data-item-name="{{ page.header.title }}"
+                data-item-price="{{ page.header.price }}"
+                data-item-url="{{ page.url }}"
+                data-item-payment-interval="{{ page.header.interval }}"
+                {% if page.header.interval_count %}
+                    data-item-payment-interval-count="{{ page.header.interval_count }}"
+                {% endif %}
+                {% if page.header.trial %}
+                    data-item-payment-trial="{{ page.header.trial }}"
+                {% endif %}
                 {% spaceless %}
                 {% if snipcart_image %}
                     data-item-image="{{ snipcart_image.cropResize(50,50).url }}"
                 {% endif %}
                 {% endspaceless %}
-                
+
             >
                 <i class="fa fa-shopping-cart"></i> Add to Cart
             </a>
