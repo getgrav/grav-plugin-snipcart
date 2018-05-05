@@ -10,7 +10,11 @@
         <div class="snipcart-products block-group">
             {% for child in page.collection() %}
                 {% if (child.header.unpublished is not defined or (child.header.unpublished == false)) %}
-                    {% include 'partials/snipcart_product_item.html.twig' with {'page': child, 'parent': page} %}
+                    {% if(child.header.interval) is not defined %}
+                        {% include 'partials/snipcart_product_item.html.twig' with {'page': child, 'parent': page} %}
+                    {% else %}
+                        {% include 'partials/snipcart_subscription_item_small.html.twig' with {'page': child, 'parent': page} %}
+                    {% endif %}
                 {% endif %}
             {% endfor %}
         </div>
