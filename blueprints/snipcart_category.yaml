@@ -1,0 +1,17 @@
+title: Snipcart Category
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+
+          import@:
+            ordering@: 5
+            type: partials/modular-parts
+            context: blueprints://pages
+
+          fields:
+            modular_title:
+              title: PLUGIN_SNIPCART.PAGE_OPTIONS.CATEGORY.MODULAR_TITLE

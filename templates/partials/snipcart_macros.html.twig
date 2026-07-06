@@ -1,0 +1,109 @@
+{% macro add_to_cart(name, url, image, attributes, classes, text) %}
+    <a href="#"
+        class="{{ classes }} snipcart-add-item"
+        data-item-id="{{ attributes.product_id }}"
+        data-item-name="{{ name }}"
+        data-item-url="{{ url }}"
+        data-item-price="{{ attributes.price }}"
+        {% spaceless %}
+        {% if image %}
+            data-item-image="{{ image.cropResize(50,50).url }}"
+        {% endif %}
+        {% if attributes.description is defined %}
+            data-item-description="{{ attributes.description }}"
+        {% endif %}
+        {% if attributes.categories is defined %}
+            data-item-categories="{{ attributes.categories | join(', ') }}"
+        {% endif %}
+        {% if attributes.file_guid is defined %}
+            data-item-file-guid="{{ attributes.file_guid }}"
+        {% endif %}
+        {% if attributes.stackable is defined %}
+            data-item-stackable="{{ attributes.stackable ? 'true' : 'false' }}"
+        {% endif %}
+        {% if attributes.shipable is defined %}
+            data-item-shipable="{{ attributes.shipable ? 'true' : 'false' }}"
+        {% endif %}
+        {% if attributes.taxable is defined %}
+            data-item-taxable="{{ attributes.taxable ? 'true' : 'false' }}"
+        {% endif %}
+        {% if attributes.metadata %}
+            data-item-metadata="{{ attributes.metadata }}"
+        {% endif %}
+
+        {# Shipping Dimensions #}
+        {% if attributes.dimensions.weight is defined %}
+            data-item-weight="{{ attributes.dimensions.weight }}"
+        {% endif %}
+        {% if attributes.dimensions.width is defined %}
+            data-item-width="{{ attributes.dimensions.width }}"
+        {% endif %}
+        {% if attributes.dimensions.length is defined %}
+            data-item-length="{{ attributes.dimensions.length }}"
+        {% endif %}
+        {% if attributes.dimensions.height is defined %}
+            data-item-height="{{ attributes.dimensions.height }}"
+        {% endif %}
+
+        {# Quantity #}
+        {% if attributes.quantity.quantity is defined %}
+            data-item-quantity="{{ attributes.quantity.quantity }}"
+        {% endif %}
+        {% if attributes.quantity.min_quantity is defined %}
+            data-item-min-quantity="{{ attributes.quantity.min_quantity }}"
+        {% endif %}
+        {% if attributes.quantity.max_quantity is defined %}
+            data-item-max-quantity="{{ attributes.quantity.max_quantity }}"
+        {% endif %}
+        {% if attributes.quantity.quantity_step is defined %}
+            data-item-quantity-step="{{ attributes.quantity.quantity_step }}"
+        {% endif %}
+
+        {# Taxes #}
+        {% if attributes.taxes.taxes is defined %}
+            data-item-taxes="{{ attributes.taxes.taxes | join('|') }}"
+        {% endif %}
+        {% if attributes.taxes.has_included is defined %}
+            data-item-has-included="{{ attributes.taxes.has_included ? 'true' : 'false' }}"
+        {% endif %}
+
+        {# Payment #}
+        {% if attributes.payment.interval is defined %}
+            data-item-payment-interval="{{ attributes.payment.interval }}"
+        {% endif %}
+        {% if attributes.payment.interval_count is defined %}
+            data-item-payment-interval-count="{{ attributes.payment.interval_count }}"
+        {% endif %}
+        {% if attributes.payment.trial is defined %}
+            data-item-payment-trial="{{ attributes.payment.trial }}"
+        {% endif %}
+
+        {# Subscription #}
+        {% if attributes.subscription.recurring_shipping is defined %}
+            data-item-recurring-shipping="{{ attributes.subscription.recurring_shipping ? 'true' : 'false' }}"
+        {% endif %}
+        {% if attributes.subscription.cancellation_action is defined %}
+            data-item-cancellation-action="{{ attributes.subscription.cancellation_action }}"
+        {% endif %}
+        {% if attributes.subscription.pausing_action is defined %}
+            data-item-pausing-action="{{ attributes.subscription.pausing_action }}"
+        {% endif %}
+
+        {# Custom Fields #}
+        {% if attributes.custom is defined %}
+            {% for customField in attributes.custom %}
+                data-item-custom{{ loop.index }}-name="{{ customField.name }}"
+                data-item-custom{{ loop.index }}-required="{{ customField.required ? 'true' : 'false' }}"
+
+                {% if customField.type == 'textarea' %}
+                    data-item-custom{{ loop.index }}-type="textarea"
+                {% endif %}
+                {% if customField.options %}
+                    data-item-custom{{ loop.index }}-options="{{ customField.options | join('|') }}"
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        {% endspaceless %}
+    > <i class="fa fa-shopping-cart"></i> {{ text }}
+    </a>
+{% endmacro %}

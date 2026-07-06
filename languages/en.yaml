@@ -1,0 +1,100 @@
+PLUGIN_SNIPCART:
+  SETTINGS:
+    BUILT_IN_CSS: Use built in CSS
+    API_KEY: API Key
+  TEMPLATES:
+    CHECKOUT: Checkout
+    DETAILS: Details
+    ADD: Add
+    ADD_TO_CART: Add to Cart
+  PAGE_OPTIONS:
+    DEFAULT:
+      MODULAR_TITLE: Snipcart Items
+    CATEGORY:
+      MODULAR_TITLE: Snipcart Items
+    DETAIL:
+      TITLE: Snipcart Item
+      DESCRIPTION:
+        LABEL: Description
+      PRODUCT_ID:
+        LABEL: Product Id
+      PRICE:
+        LABEL: Price
+      CATEGORIES:
+        LABEL: Categories
+      FILE_GUID:
+        LABEL: File guid
+      STACKABLE:
+        LABEL: Stackable
+      SHIPABLE:
+        LABEL: Shipable
+      TAXABLE:
+        LABEL: Taxable
+      METADATA:
+        LABEL: JSON Metadata
+      DIMENSIONS:
+        TITLE: Shipping Dimensions
+        WEIGHT:
+          LABEL: Weight (g)
+        WIDTH:
+          LABEL: Width (cm)
+        LENGTH:
+          LABEL: Length (cm)
+        HEIGHT:
+          LABEL: Height (cm)
+      QUANTITY:
+        TITLE: Quantity
+        QUANTITY:
+          LABEL: Quantity
+        MIN:
+          LABEL: Min Quantity
+        MAX:
+          LABEL: Max Quantity
+        STEPS:
+          LABEL: Quantity Steps
+      TAXES:
+        TITLE: Taxes
+        TAXES:
+          LABEL: Taxes to apply
+        INCLUDED:
+          LABEL: Taxes included
+      PAYMENT:
+        TITLE: Payment
+        INTERVAL:
+          LABEL: Interval
+          OPTIONS:
+            DAY:
+              LABEL: Day
+            WEEK:
+              LABEL: Week
+            MONTH:
+              LABEL: Month
+            YEAR:
+              LABEL: Year
+        COUNT:
+          LABEL: Interval count
+        TRIAL:
+          LABEL: Trial period (days)
+      SUBSCRIPTION:
+        TITLE: Subscription
+        RECURRING_SHIPPING:
+          LABEL: Recurring Shipping
+        CANCELLATION_ACTION:
+          LABEL: Cancellation Action
+          OPTIONS:
+            PARTIAL: Partial Refund Last Payment
+            CANCEL: Cancel At Current Cycle End
+        PAUSING_ACTION:
+          LABEL: Pausing Action
+          OPTIONS:
+            KEEP: Keep Active Until End Of Billing Cycle
+            PAUSE: Pause And Realign Billing Cycle On Resume
+      CUSTOM:
+        TITLE: Custom Fields
+        NAME:
+          LABEL: Name
+        OPTIONS:
+          LABEL: Options
+          DESCRIPTION: 'List of options: use `true,false` for checkboxes, add `[+10]` as a postfix to add a price modifier'
+        REQUIRED:
+          LABEL: Required

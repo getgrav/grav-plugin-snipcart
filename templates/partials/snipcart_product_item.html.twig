@@ -1,3 +1,4 @@
+{% from "partials/snipcart_macros.html.twig" import add_to_cart %}
 {% set snipcart_image = page.media.images|first %}
 
 <div class="snipcart-item block" >
@@ -8,30 +9,23 @@
             <a href="{{ page.url }}">{{ snipcart_image.cropResize(200,200).html('page.header.title','snipcart-thumb-image')|raw }}</a>
         {% endif %}
         <span class="snipcart-price">
-        ${{ page.header.price }}
+        ${{ page.header.snipcart.price }}
         </span>
     </div>
     <div class="snipcart-details">
     <p>
         <a href="{{ page.url }}"
             class="button button-small">
-            <i class="fa fa-info-circle"></i> Details
+            <i class="fa fa-info-circle"></i> {{ 'PLUGIN_SNIPCART.TEMPLATES.DETAILS'|t|e }}
         </a>
-        <a href="#"
-            class="button button-small snipcart-add-item"
-            data-item-id="{{ page.header.product_id }}"
-            data-item-name="{{ page.header.title }}"
-            data-item-price="{{ page.header.price }}"
-            data-item-url="{{ page.url }}"
-                {% spaceless %}
-                    {% if snipcart_image %}
-                        data-item-image="{{ snipcart_image.cropResize(50,50).url|raw }}"
-                    {% endif %}
-                {% endspaceless %}
-                
-        >
-            <i class="fa fa-shopping-cart"></i> Add
-        </a>
+        {{ add_to_cart(
+            page.header.title,
+            page.url,
+            snipcart_image,
+            page.header.snipcart,
+            'button button-small',
+            'PLUGIN_SNIPCART.TEMPLATES.ADD'|t|e,
+        ) | raw }}
     </p>
     </div>
 </div>

@@ -1,0 +1,32 @@
+form:
+  fields:
+
+    modular_title:
+      type: spacer
+      title: PLUGIN_ADMIN.MODULE_SETUP
+
+    header.content.items:
+      type: text
+      label: PLUGIN_ADMIN.ITEMS
+      default: '@self.modular'
+      size: medium
+
+    header.content.order.by:
+      type: select
+      label: PLUGIN_ADMIN.ORDER_BY
+      default: date
+      size: small
+      options:
+        folder: PLUGIN_ADMIN.FOLDER
+        title: PLUGIN_ADMIN.PAGE_TITLE
+        date: PLUGIN_ADMIN.DATE
+        default: PLUGIN_ADMIN.DEFAULT
+
+    header.content.order.dir:
+      type: select
+      label: PLUGIN_ADMIN.ORDER
+      default: desc
+      size: small
+      options:
+        asc: PLUGIN_ADMIN.ASCENDING
+        desc: PLUGIN_ADMIN.DESCENDING

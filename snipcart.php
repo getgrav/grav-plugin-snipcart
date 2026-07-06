@@ -45,6 +45,7 @@ class SnipcartPlugin extends Plugin
         /** @var Types $types */
         $types = $event->types;
         $types->scanTemplates('plugins://snipcart/templates');
+        $types->scanBlueprints('plugins://snipcart/blueprints');
     }
 
     /**

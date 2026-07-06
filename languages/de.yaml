@@ -1,0 +1,100 @@
+PLUGIN_SNIPCART:
+  SETTINGS:
+    BUILT_IN_CSS: Verwende eingebautes CSS
+    API_KEY: API Schlüssel
+  TEMPLATES:
+    CHECKOUT: Kasse
+    DETAILS: Details
+    ADD: Hinzufügen
+    ADD_TO_CART: In den Warenkorb
+  PAGE_OPTIONS:
+    DEFAULT:
+      MODULAR_TITLE: Snipcart Artikel
+    CATEGORY:
+      MODULAR_TITLE: Snipcart Artikel
+    DETAIL:
+      TITLE: Snipcart Artikel
+      DESCRIPTION:
+        LABEL: Beschreibung
+      PRODUCT_ID:
+        LABEL: Produkt ID
+      PRICE:
+        LABEL: Preis
+      CATEGORIES:
+        LABEL: Kategorien
+      FILE_GUID:
+        LABEL: Datei GUID
+      STACKABLE:
+        LABEL: Stapelbar
+      SHIPABLE:
+        LABEL: Versandfähig
+      TAXABLE:
+        LABEL: Steuerpflichtig
+      METADATA:
+        LABEL: JSON Metadaten
+      DIMENSIONS:
+        TITLE: Versandabmessungen
+        WEIGHT:
+          LABEL: Gewicht (g)
+        WIDTH:
+          LABEL: Breite (cm)
+        LENGTH:
+          LABEL: Länge (cm)
+        HEIGHT:
+          LABEL: Höhe (cm)
+      QUANTITY:
+        TITLE: Menge
+        QUANTITY:
+          LABEL: Menge
+        MIN:
+          LABEL: Mindestmenge
+        MAX:
+          LABEL: Höchstmenge
+        STEPS:
+          LABEL: Mengenschritte
+      TAXES:
+        TITLE: Steuern
+        TAXES:
+          LABEL: Anzuwendende Steuern
+        INCLUDED:
+          LABEL: Enthaltene Steuern
+      PAYMENT:
+        TITLE: Zahlung
+        INTERVAL:
+          LABEL: Intervall
+          OPTIONS:
+            DAY:
+              LABEL: Tag
+            WEEK:
+              LABEL: Woche
+            MONTH:
+              LABEL: Monat
+            YEAR:
+              LABEL: Jahr
+        COUNT:
+          LABEL: Intervallanzahl
+        TRIAL:
+          LABEL: Probezeit (Tage)
+      SUBSCRIPTION:
+        TITLE: Abonnement
+        RECURRING_SHIPPING:
+          LABEL: Wiederkehrender Versand
+        CANCELLATION_ACTION:
+          LABEL: Kündigungsaktion
+          OPTIONS:
+            PARTIAL: Teilrückerstattung letzte Zahlung
+            CANCEL: Kündigen nach aktuellem Abrechnungszeitraum
+        PAUSING_ACTION:
+          LABEL: Pausierungsaktion
+          OPTIONS:
+            KEEP: Beibehalten bis Ende des Abrechnungszeitraums
+            PAUSE: Pausieren und Abrechnungszeitraums bei Wiederaufnahme anpassen
+      CUSTOM:
+        TITLE: Benutzerdefinierte Felder
+        NAME:
+          LABEL: Name
+        OPTIONS:
+          LABEL: Optionen
+          DESCRIPTION: 'Liste von Optionen: nutze `true,false` für Checkboxen, füge `[+10]` als Postfix hinzu, um einen Preisaufschlag hinzuzufügen'
+        REQUIRED:
+          LABEL: Erforderlich

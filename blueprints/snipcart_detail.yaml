@@ -1,0 +1,289 @@
+title: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.TITLE
+extends@:
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        content:
+          fields:
+            header.snipcart.description:
+              ordering@: 2
+              type: text
+              label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.DESCRIPTION.LABEL
+              style: vertical
+              size: long
+
+        snipcart:
+          type: tab
+          title: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.TITLE
+          fields:
+
+            snipcart_title:
+              type: spacer
+              title: Snipcart
+
+            header.snipcart.product_id:
+              type: text
+              label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PRODUCT_ID.LABEL
+              size: small
+              validate:
+                required: true
+
+            header.snipcart.price:
+              type: number
+              label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PRICE.LABEL
+              size: small
+              validate:
+                required: true
+
+            header.snipcart.categories:
+              type: selectize
+              label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CATEGORIES.LABEL
+              toggleable: true
+              size: medium
+              validate:
+                type: commalist
+
+            header.snipcart.file_guid:
+              type: text
+              label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.FILE_GUID.LABEL
+              toggleable: true
+              size: medium
+
+            header.snipcart.stackable:
+              type: toggle
+              label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.STACKABLE.LABEL
+              size: small
+              toggleable: true
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+
+            header.snipcart.shipable:
+              type: toggle
+              label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.SHIPABLE.LABEL
+              size: small
+              toggleable: true
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+
+            header.snipcart.taxable:
+              type: toggle
+              label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.TAXABLE.LABEL
+              size: small
+              toggleable: true
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+
+            header.snipcart.metadata:
+              type: textarea
+              label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.METADATA.LABEL
+              toggleable: true
+
+            dimensions:
+              type: section
+              title: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.DIMENSIONS.TITLE
+              fields:
+
+                header.snipcart.dimensions.weight:
+                  type: number
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.DIMENSIONS.WEIGHT.LABEL
+                  toggleable: true
+                  size: small
+
+                header.snipcart.dimensions.width:
+                  type: number
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.DIMENSIONS.WIDTH.LABEL
+                  toggleable: true
+                  size: small
+
+                header.snipcart.dimensions.length:
+                  type: number
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.DIMENSIONS.LENGTH.LABEL
+                  toggleable: true
+                  size: small
+
+                header.snipcart.dimensions.height:
+                  type: number
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.DIMENSIONS.HEIGHT.LABEL
+                  toggleable: true
+                  size: small
+
+            quantity:
+              type: section
+              title: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.QUANTITY.TITLE
+              fields:
+
+                header.snipcart.quantity.quantity:
+                  type: number
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.QUANTITY.QUANTITY.LABEL
+                  toggleable: true
+                  size: small
+
+                header.snipcart.quantity.min_quantity:
+                  type: number
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.QUANTITY.MIN.LABEL
+                  toggleable: true
+                  size: small
+
+                header.snipcart.quantity.max_quantity:
+                  type: number
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.QUANTITY.MAX.LABEL
+                  toggleable: true
+                  size: small
+
+                header.snipcart.quantity.quantity_step:
+                  type: number
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.QUANTITY.STEPS.LABEL
+                  toggleable: true
+                  size: small
+
+            taxes:
+              type: section
+              title: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.TAXES.TITLE
+              fields:
+
+                header.snipcart.taxes.taxes:
+                  type: selectize
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.TAXES.TAXES.LABEL
+                  toggleable: true
+                  size: medium
+                  validate:
+                    type: commalist
+
+                header.snipcart.taxes.has_included:
+                  type: toggle
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.TAXES.INCLUDED.LABEL
+                  size: small
+                  toggleable: true
+                  highlight: 0
+                  default: 0
+                  options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                  validate:
+                    type: bool
+
+            payment:
+              type: section
+              title: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.TITLE
+              fields:
+
+                header.snipcart.payment.interval:
+                  type: select
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.INTERVAL.LABEL
+                  toggleable: true
+                  size: medium
+                  options:
+                    Day: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.INTERVAL.OPTIONS.DAY.LABEL
+                    Week: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.INTERVAL.OPTIONS.WEEK.LABEL
+                    Month: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.INTERVAL.OPTIONS.MONTH.LABEL
+                    Year: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.INTERVAL.OPTIONS.YEAR.LABEL
+
+                header.snipcart.payment.interval_count:
+                  type: number
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.COUNT.LABEL
+                  toggleable: true
+                  size: small
+
+                header.snipcart.payment.trial:
+                  type: number
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.TRIAL.LABEL
+                  toggleable: true
+                  size: small
+
+            subscription:
+              type: section
+              title: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.SUBSCRIPTION.TITLE
+              fields:
+
+                header.snipcart.subscription.recurring_shipping:
+                  type: toggle
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.SUBSCRIPTION.RECURRING_SHIPPING.LABEL
+                  size: small
+                  toggleable: true
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+
+                header.snipcart.subscription.cancellation_action:
+                  type: select
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.SUBSCRIPTION.CANCELLATION_ACTION.LABEL
+                  toggleable: true
+                  size: medium
+                  options:
+                    PartialRefundLastPayment: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.SUBSCRIPTION.CANCELLATION_ACTION.OPTIONS.PARTIAL
+                    CancelAtCurrentCycleEnd: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.SUBSCRIPTION.CANCELLATION_ACTION.OPTIONS.CANCEL
+
+                header.snipcart.subscription.pausing_action:
+                  type: select
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.SUBSCRIPTION.PAUSING_ACTION.LABEL
+                  toggleable: true
+                  size: medium
+                  options:
+                    KeepActiveUntilEndOfBillingCycle: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.SUBSCRIPTION.PAUSING_ACTION.OPTIONS.KEEP
+                    PauseAndRealignBillingCycleOnResume: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.SUBSCRIPTION.PAUSING_ACTION.OPTIONS.PAUSE
+
+            custom:
+              type: section
+              title: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TITLE
+              fields:
+
+                header.snipcart.custom:
+                  type: list
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TITLE
+                  toggleable: true
+                  style: horizontal
+                  fields:
+
+                    .name:
+                      type: text
+                      label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.NAME.LABEL
+                      size: medium
+                      validate:
+                        required: true
+
+                    .options:
+                      type: selectize
+                      label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.OPTIONS.LABEL
+                      description: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.OPTIONS.DESCRIPTION
+                      toggleable: true
+                      size: medium
+                      validate:
+                        type: commalist
+
+                    .required:
+                      type: toggle
+                      label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.REQUIRED.LABEL
+                      toggleable: true
+                      size: small
+                      highlight: 1
+                      default: 1
+                      options:
+                        1: PLUGIN_ADMIN.YES
+                        0: PLUGIN_ADMIN.NO
+                      validate:
+                        type: bool
