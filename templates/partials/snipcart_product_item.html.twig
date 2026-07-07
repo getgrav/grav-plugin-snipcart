@@ -8,7 +8,7 @@
             <a href="{{ page.url }}">{{ snipcart_image.cropResize(200,200).html('page.header.title','snipcart-thumb-image')|raw }}</a>
         {% endif %}
         <span class="snipcart-price">
-        ${{ page.header.price }}
+            <span class="snipcart-currency">{{ header.snipcart.currency_symbol ?? '$' }}</span>{{ page.header.price }}
         </span>
     </div>
     <div class="snipcart-details">
