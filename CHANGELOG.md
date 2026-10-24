@@ -1,3 +1,9 @@
+# v1.7.3
+## 10/24/2026
+
+1. [](#bugfix)
+    * Only load the Snipcart cart once an API key is set, so a new shop no longer shows a script error
+
 # v1.7.2
 ## 05/01/2026
 
